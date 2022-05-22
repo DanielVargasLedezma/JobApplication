@@ -50,7 +50,8 @@
                         android:ems="10"
                         android:id="@+id/firstName" android:hint="@string/first_name"
                         android:singleLine="false"
-                        android:visibility="visible" android:textAlignment="center"/>
+                        android:visibility="visible" android:textAlignment="center"
+                        android:textColor="@drawable/edit_text" />
                 <EditText
                         android:background="@drawable/design"
                         android:layout_width="match_parent"
@@ -58,7 +59,8 @@
                         android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/lastName" android:layout_weight="1" android:hint="@string/last_name"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@drawable/edit_text"/>
             </LinearLayout>
             <Space
                     android:layout_width="match_parent"
@@ -85,7 +87,8 @@
                             android:ems="10"
                             android:id="@+id/streetAddress" android:layout_weight="1"
                             android:hint="@string/street_address"
-                            android:textAlignment="center"/>
+                            android:textAlignment="center"
+                            android:textColor="@drawable/edit_text"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -99,7 +102,8 @@
                             android:ems="10"
                             android:id="@+id/streetAddressLineTwo" android:layout_weight="1"
                             android:hint="@string/street_address_line_2" android:textAlignment="center"
-                            android:textSize="18sp"/>
+                            android:textSize="18sp"
+                            android:textColor="@drawable/edit_text"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -112,7 +116,8 @@
                             android:inputType="textPersonName"
                             android:ems="10"
                             android:id="@+id/city" android:layout_weight="1" android:hint="@string/city"
-                            android:textAlignment="center" android:textSize="18sp"/>
+                            android:textAlignment="center" android:textSize="18sp"
+                            android:textColor="@drawable/edit_text"/>
                     <EditText
                             android:background="@drawable/design"
                             android:layout_width="match_parent"
@@ -121,7 +126,8 @@
                             android:ems="10"
                             android:id="@+id/state" android:layout_weight="1"
                             android:hint="@string/state_provincie"
-                            android:textAlignment="center" android:textSize="18sp"/>
+                            android:textAlignment="center" android:textSize="18sp"
+                            android:textColor="@drawable/edit_text"/>
                 </LinearLayout>
                 <LinearLayout
                         android:orientation="horizontal"
@@ -134,7 +140,8 @@
                             android:inputType="number"
                             android:ems="10"
                             android:id="@+id/postal" android:layout_weight="1"
-                            android:hint="@string/postal_zip_code" android:textAlignment="center"/>
+                            android:hint="@string/postal_zip_code" android:textAlignment="center"
+                            android:textColor="@drawable/edit_text"/>
                     <EditText
                             android:background="@drawable/design"
                             android:layout_width="match_parent"
@@ -142,7 +149,8 @@
                             android:inputType="textPersonName"
                             android:ems="10"
                             android:id="@+id/country" android:layout_weight="1"
-                            android:hint="@string/country" android:textAlignment="center"/>
+                            android:hint="@string/country" android:textAlignment="center"
+                            android:textColor="@drawable/edit_text"/>
                 </LinearLayout>
             </LinearLayout>
             <Space
@@ -165,7 +173,8 @@
                         android:ems="10"
                         android:id="@+id/email" android:layout_weight="1"
                         android:hint="@string/example_mail_com" android:selectAllOnFocus="false"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@drawable/edit_text"/>
             </LinearLayout>
             <Space
                     android:layout_width="match_parent"
@@ -187,7 +196,8 @@
                         android:ems="10"
                         android:id="@+id/areaCode" android:layout_weight="1"
                         android:hint="@string/area_code"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@drawable/edit_text"/>
                 <EditText
                         android:background="@drawable/design"
                         android:layout_width="match_parent"
@@ -195,7 +205,8 @@
                         android:inputType="number"
                         android:ems="10"
                         android:id="@+id/phoneNumber" android:layout_weight="1"
-                        android:textAlignment="center" android:hint="@string/phone_number"/>
+                        android:textAlignment="center" android:hint="@string/phone_number"
+                        android:textColor="@drawable/edit_text"/>
             </LinearLayout>
             <Space
                     android:layout_width="match_parent"
@@ -216,7 +227,8 @@
                         android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/position" android:layout_weight="1" android:hint="@string/position"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@drawable/edit_text"/>
             </LinearLayout>
             <Space
                     android:layout_width="match_parent"
@@ -237,7 +249,8 @@
                         android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/date" android:layout_weight="1" android:hint="@string/date"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@drawable/edit_text"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
