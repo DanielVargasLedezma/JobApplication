@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.jobapplication.R
 import com.example.jobapplication.data.model.JobForm
 import com.example.jobapplication.data.model.Persona
 import com.example.jobapplication.data.provider.JobFormProvider
@@ -82,6 +84,92 @@ class JobFormFragment : Fragment() {
                 phoneNumber.setText(param1?.phone_number)
                 position.setText(param1?.position)
                 date.setText(param1?.date)
+
+                /*
+                 * Se programa el botón para editar el jobForm.
+                 */
+                guardar.setOnClickListener {
+                    if (validarCamposLlenos()) {
+                        jobApplications.editJobForm(
+                            JobForm(
+                                firstName.text.toString(),
+                                lastName.text.toString(),
+                                streetAddress.text.toString(),
+                                streetAddressLineTwo.text.toString(),
+                                city.text.toString(),
+                                state.text.toString(),
+                                postal.text.toString(),
+                                country.text.toString(),
+                                email.text.toString(),
+                                areaCode.text.toString(),
+                                phoneNumber.text.toString(),
+                                position.text.toString(),
+                                date.text.toString(),
+                                param2!!.userName
+                            )
+                        )
+
+                        Toast.makeText(
+                            this@JobFormFragment.context,
+                            "Formulario actualizado con éxito.",
+                            Toast.LENGTH_LONG
+                        )
+                            .show()
+
+                        startHomeFragment()
+                    }
+                    else {
+                        Toast.makeText(
+                            this@JobFormFragment.context,
+                            "Hay campos sin rellenar, llénelos para poder editar la aplicación.",
+                            Toast.LENGTH_LONG
+                        )
+                            .show()
+                    }
+                }
+            } else {
+                /*
+                 * Se programa el botón para insertar en la colección.
+                 */
+                guardar.setOnClickListener {
+                    if (validarCamposLlenos()) {
+                        jobApplications.addJobForm(
+                            JobForm(
+                                firstName.text.toString(),
+                                lastName.text.toString(),
+                                streetAddress.text.toString(),
+                                streetAddressLineTwo.text.toString(),
+                                city.text.toString(),
+                                state.text.toString(),
+                                postal.text.toString(),
+                                country.text.toString(),
+                                email.text.toString(),
+                                areaCode.text.toString(),
+                                phoneNumber.text.toString(),
+                                position.text.toString(),
+                                date.text.toString(),
+                                param2!!.userName
+                            )
+                        )
+
+                        Toast.makeText(
+                            this@JobFormFragment.context,
+                            "Formulario enviado con éxito.",
+                            Toast.LENGTH_LONG
+                        )
+                            .show()
+
+                        startHomeFragment()
+                    }
+                    else {
+                        Toast.makeText(
+                            this@JobFormFragment.context,
+                            "Hay campos sin rellenar, llénelos para poder enviar la aplicación.",
+                            Toast.LENGTH_LONG
+                        )
+                            .show()
+                    }
+                }
             }
             descartar.setOnClickListener{
                 descartar()
@@ -136,6 +224,32 @@ class JobFormFragment : Fragment() {
 
             }
         }
+    }
+
+    /*
+     * Método encapsulado para validar que los campos estén todos llenos.
+     */
+    private fun validarCamposLlenos(): Boolean {
+        binding.apply {
+            if (
+                firstName.text.isEmpty() || lastName.text.isEmpty() || streetAddress.text.isEmpty() ||
+                streetAddressLineTwo.text.isEmpty() || city.text.isEmpty() || state.text.isEmpty() || postal.text.isEmpty()
+                || country.text.isEmpty() || email.text.isEmpty() || areaCode.text.isEmpty() || phoneNumber.text.isEmpty()
+                || position.text.isEmpty() || date.text.isEmpty()
+            )
+                return false
+            return true
+        }
+    }
+
+    private fun startHomeFragment() {
+        val fragmentTransaction = parentFragmentManager.beginTransaction()
+        fragmentTransaction.replace(
+            R.id.contentMain, InicioFragment.newInstance(
+                param2!!.userName, param2!!.password
+            )
+        )
+        fragmentTransaction.commit()
     }
 
     companion object {

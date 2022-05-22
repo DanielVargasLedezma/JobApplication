@@ -5,19 +5,19 @@ import java.io.Serializable as JavaSerial
 
 @Serializable
 data class JobForm(
-    val first_name: String,
-    val last_name: String,
-    val street_address: String,
-    val street_address_2: String,
-    val city: String,
-    val state: String,
-    val zip_code: String,
-    val country: String,
-    val email: String,
-    val area_code: String,
-    val phone_number: String,
-    val position: String,
-    val date: String,
+    var first_name: String,
+    var last_name: String,
+    var street_address: String,
+    var street_address_2: String,
+    var city: String,
+    var state: String,
+    var zip_code: String,
+    var country: String,
+    var email: String,
+    var area_code: String,
+    var phone_number: String,
+    var position: String,
+    var date: String,
     val usuarioLinkeado: String,
 ): JavaSerial {
     init {

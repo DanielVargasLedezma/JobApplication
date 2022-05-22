@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -72,6 +73,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
              * Le añade el listener a la navdraw para que haga una cosa u otra cuando se seleccione cada item de la nav.
              */
             navView.setNavigationItemSelectedListener(this@MainActivity)
+
+            navView.getHeaderView(0).findViewById<TextView>(R.id.nombreUsuarioHeader).text = userLogged!!.userName
 
             /*
              * Oculta la opción que no debería ver el admin o estándar.
