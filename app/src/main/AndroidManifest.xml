@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.jobapplication">
+
+    <application
+            android:allowBackup="true"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:label="@string/app_name"
+            android:roundIcon="@android:drawable/ic_menu_my_calendar"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.JobApplication">
+        <activity
+                android:name=".ui.view.acccionesUsuario.CambiarContra"
+                android:exported="true"
+                android:theme="@style/Theme.JobApplication.NoActionBar"/>
+        <activity
+                android:name=".ui.view.acccionesUsuario.CrearUsuario"
+                android:exported="true"
+                android:theme="@style/Theme.JobApplication.NoActionBar"/>
+        <activity
+                android:name=".ui.view.JobApplication"
+                android:exported="true"
+                android:theme="@style/Theme.JobApplication.NoActionBar"/>
+        <activity
+                android:name=".ui.view.Login"
+                android:exported="true"
+                android:theme="@style/Theme.JobApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".ui.view.MainActivity"
+                android:exported="true"
+                android:theme="@style/Theme.JobApplication.NoActionBar">
+        </activity>
+    </application>
+
+</manifest>
