@@ -13,6 +13,7 @@ import com.example.jobapplication.data.model.Persona
 import com.example.jobapplication.data.provider.JobFormProvider
 import com.example.jobapplication.databinding.ActivityMainBinding
 import com.example.jobapplication.ui.view.fragments.InicioFragment
+import com.example.jobapplication.ui.view.fragments.JobFormFragment
 import com.example.jobapplication.ui.view.fragments.ListJobApplicationFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -157,7 +158,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 )
             }
             R.id.form -> {
-                //                replaceFragments(Inicio())
+                val form = jobApplications.getApplication(userLogged!!.userName)
+
+                replaceFragments(JobFormFragment.newInstance(form, userLogged!!))
             }
             R.id.conForm -> {
                 replaceFragments(

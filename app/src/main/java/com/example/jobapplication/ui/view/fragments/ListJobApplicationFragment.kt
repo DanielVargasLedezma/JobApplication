@@ -25,7 +25,7 @@ import java.util.Collections
  * Use the [ListJobApplicationFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ListJobApplicationFragment : Fragment() {
+class ListJobApplicationFragment() : Fragment() {
 
     private val ARG_PARAM2 = "param2"
 
@@ -190,9 +190,13 @@ class ListJobApplicationFragment : Fragment() {
      *
      */
     private fun onItemSelected(jobForm: JobForm) {
-        /*
-         * TODO implementar lógica de iniciar la actividad de
-         */
+        val fragmentTransaction = parentFragmentManager.beginTransaction()
+        fragmentTransaction.replace(
+            R.id.contentMain, JobFormFragment.newInstance(
+                jobForm, param2
+            )
+        )
+        fragmentTransaction.commit()
     }
 
     /*
