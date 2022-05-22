@@ -60,7 +60,7 @@
                 tools:text="Applicant email"
                 android:layout_marginTop="5dp"
 
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintHorizontal_bias="0.1"
 
@@ -76,9 +76,9 @@
                 android:drawablePadding="5dp"
                 tools:text="Applicant profession"
 
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintHorizontal_bias="0.15"
+                app:layout_constraintHorizontal_bias="0.1"
                 android:layout_marginTop="5dp"
 
                 app:layout_constraintStart_toEndOf="@+id/guidelineStart"
@@ -93,7 +93,7 @@
                 android:drawablePadding="5dp"
                 tools:text="Applicant phone"
 
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintHorizontal_bias="0.1"
                 android:layout_marginTop="5dp"

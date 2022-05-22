@@ -37,8 +37,12 @@ class JobFormProvider private constructor() {
         }
     }
 
-    fun addJobForm(persona: JobForm) {
-        jobForms.add(persona)
+    fun addJobForm(jobForm: JobForm): Boolean {
+        if (getApplication(jobForm.usuarioLinkeado) == null) {
+            jobForms.add(jobForm)
+            return true
+        }
+        return false
     }
 
     fun getApplications(): ArrayList<JobForm> {
@@ -56,5 +60,25 @@ class JobFormProvider private constructor() {
 
     fun deleteJobApplication(position: Int) {
         jobForms.removeAt(position)
+    }
+
+    fun editJobForm(jobForm: JobForm) {
+        val aux = getApplication(jobForm.usuarioLinkeado)
+
+        if (aux != null) {
+            aux.first_name = jobForm.first_name
+            aux.last_name = jobForm.last_name
+            aux.street_address = jobForm.street_address
+            aux.street_address_2 = jobForm.street_address_2
+            aux.city = jobForm.city
+            aux.state = jobForm.state
+            aux.zip_code = jobForm.zip_code
+            aux.country = jobForm.country
+            aux.email = jobForm.email
+            aux.area_code = jobForm.area_code
+            aux.phone_number = jobForm.phone_number
+            aux.position = jobForm.position
+            aux.date = jobForm.date
+        }
     }
 }
