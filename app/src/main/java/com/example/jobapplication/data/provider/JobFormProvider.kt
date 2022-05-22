@@ -1,6 +1,7 @@
 package com.example.jobapplication.data.provider
 
 import com.example.jobapplication.data.model.JobForm
+import com.example.jobapplication.data.model.Persona
 
 class JobFormProvider private constructor() {
 
@@ -60,6 +61,10 @@ class JobFormProvider private constructor() {
 
     fun deleteJobApplication(position: Int) {
         jobForms.removeAt(position)
+    }
+
+    fun deleteForm (p: JobForm){
+        jobForms.remove(p)
     }
 
     fun editJobForm(jobForm: JobForm) {

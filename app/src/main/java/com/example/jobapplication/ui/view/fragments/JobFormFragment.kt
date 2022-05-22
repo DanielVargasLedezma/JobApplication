@@ -1,5 +1,6 @@
 package com.example.jobapplication.ui.view.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,6 +34,7 @@ class JobFormFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+
             param1 = it.getSerializable(ARG_PARAM1) as JobForm?
             param2 = it.getSerializable(ARG_PARAM2) as Persona
         }
@@ -46,7 +48,29 @@ class JobFormFragment : Fragment() {
         _binding = FragmentJobFormBinding.inflate(inflater, container, false)
 
         binding.apply {
+
+            if(param2!!.tipoUsuario) {
+                descartar.visibility = View.GONE
+                guardar.visibility = View.GONE
+                eliminar.visibility = View.GONE
+                firstName.isEnabled = false
+                lastName.isEnabled = false
+                streetAddress.isEnabled = false
+                streetAddressLineTwo.isEnabled = false
+                city.isEnabled = false
+                state.isEnabled = false
+                postal.isEnabled = false
+                country.isEnabled = false
+                email.isEnabled = false
+                areaCode.isEnabled = false
+                phoneNumber.isEnabled = false
+                position.isEnabled = false
+                date.isEnabled = false
+
+            }
+
             if (param1 != null) {
+
                 firstName.setText(param1?.first_name)
                 lastName.setText(param1?.last_name)
                 streetAddress.setText(param1?.street_address)
@@ -147,9 +171,59 @@ class JobFormFragment : Fragment() {
                     }
                 }
             }
+            descartar.setOnClickListener{
+                descartar()
+            }
+
+            if(param1==null){
+                eliminar.visibility = View.GONE
+            }else{
+                eliminar.setOnClickListener{
+                    jobApplications.deleteForm(param1!!)
+                }
+
+            }
+
         }
 
         return binding.root
+    }
+
+    private fun descartar(
+
+    ) {
+        binding.apply {
+            if (param1 != null) {
+                firstName.setText(param1?.first_name)
+                lastName.setText(param1?.last_name)
+                streetAddress.setText(param1?.street_address)
+                streetAddressLineTwo.setText(param1?.street_address_2)
+                city.setText(param1?.city)
+                state.setText(param1?.state)
+                postal.setText(param1?.zip_code)
+                country.setText(param1?.country)
+                email.setText(param1?.email)
+                areaCode.setText(param1?.area_code)
+                phoneNumber.setText(param1?.phone_number)
+                position.setText(param1?.position)
+                date.setText(param1?.date)
+            } else {
+                firstName.text.clear()
+                lastName.text.clear()
+                streetAddress.text.clear()
+                streetAddressLineTwo.text.clear()
+                city.text.clear()
+                state.text.clear()
+                postal.text.clear()
+                country.text.clear()
+                email.text.clear()
+                areaCode.text.clear()
+                phoneNumber.text.clear()
+                position.text.clear()
+                date.text.clear()
+
+            }
+        }
     }
 
     /*

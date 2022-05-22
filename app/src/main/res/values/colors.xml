@@ -11,4 +11,6 @@
     <color name="grisBonito">#2e6171</color>
     <color name="red">#FF0000</color>
     <color name="azulOceanoVerde">#114b5f</color>
+    <color name="disabled_color">#2e6171</color>
+    <color name="enabled_color">#000000</color>
 </resources>
