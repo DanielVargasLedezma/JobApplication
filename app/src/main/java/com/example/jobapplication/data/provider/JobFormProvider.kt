@@ -26,6 +26,42 @@ class JobFormProvider private constructor() {
                 "vtrejosch"
             )
         )
+        addJobForm(
+            JobForm(
+                "Daniel",
+                "Vargas",
+                "La Ribera",
+                "300m Norte del Cementerio de la Ribera",
+                "Belén",
+                "La Ribera",
+                "42001",
+                "Costa Rica",
+                "danilevl229@gmail.com",
+                "+506",
+                "60729328",
+                "Intol Master",
+                "18/07/2000",
+                "Dan"
+            )
+        )
+        addJobForm(
+            JobForm(
+                "Daniel",
+                "Vargas",
+                "La Ribera",
+                "300m Norte del Cementerio de la Ribera",
+                "Belén",
+                "La Ribera",
+                "42001",
+                "Costa Rica",
+                "danilevl229@gmail.com",
+                "+506",
+                "60729328",
+                "Intol Master",
+                "18/07/2000",
+                "Dan_VL"
+            )
+        )
     }
 
     private object HOLDER {

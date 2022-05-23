@@ -18,8 +18,11 @@ class PersonaProvider private constructor() {
      * usuarios.
      */
     init {
-        addPersona(Persona("vtrejosch", "123", false))
         addPersona(Persona("DanVL", "asdf4321", true))
+        addPersona(Persona("vtrejosch", "123", false))
+        addPersona(Persona("Dan", "123", false))
+        addPersona(Persona("Dan_VL", "123", false))
+        addPersona(Persona("vtrejosc", "123", false))
     }
 
     /*

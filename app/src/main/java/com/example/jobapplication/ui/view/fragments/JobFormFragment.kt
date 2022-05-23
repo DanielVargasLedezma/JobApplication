@@ -34,7 +34,6 @@ class JobFormFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
             param1 = it.getSerializable(ARG_PARAM1) as JobForm?
             param2 = it.getSerializable(ARG_PARAM2) as Persona
         }
@@ -49,7 +48,7 @@ class JobFormFragment : Fragment() {
 
         binding.apply {
 
-            if(param2!!.tipoUsuario) {
+            if (param2!!.tipoUsuario) {
                 descartar.visibility = View.GONE
                 guardar.visibility = View.GONE
                 eliminar.visibility = View.GONE
@@ -85,6 +84,11 @@ class JobFormFragment : Fragment() {
                 position.setText(param1?.position)
                 date.setText(param1?.date)
 
+                eliminar.setOnClickListener {
+                    jobApplications.deleteForm(param1!!)
+                    startHomeFragment()
+                }
+
                 /*
                  * Se programa el botón para editar el jobForm.
                  */
@@ -117,8 +121,7 @@ class JobFormFragment : Fragment() {
                             .show()
 
                         startHomeFragment()
-                    }
-                    else {
+                    } else {
                         Toast.makeText(
                             this@JobFormFragment.context,
                             "Hay campos sin rellenar, llénelos para poder editar la aplicación.",
@@ -128,6 +131,8 @@ class JobFormFragment : Fragment() {
                     }
                 }
             } else {
+                eliminar.visibility = View.GONE
+
                 /*
                  * Se programa el botón para insertar en la colección.
                  */
@@ -160,8 +165,7 @@ class JobFormFragment : Fragment() {
                             .show()
 
                         startHomeFragment()
-                    }
-                    else {
+                    } else {
                         Toast.makeText(
                             this@JobFormFragment.context,
                             "Hay campos sin rellenar, llénelos para poder enviar la aplicación.",
@@ -171,27 +175,16 @@ class JobFormFragment : Fragment() {
                     }
                 }
             }
-            descartar.setOnClickListener{
+
+            descartar.setOnClickListener {
                 descartar()
             }
-
-            if(param1==null){
-                eliminar.visibility = View.GONE
-            }else{
-                eliminar.setOnClickListener{
-                    jobApplications.deleteForm(param1!!)
-                }
-
-            }
-
         }
 
         return binding.root
     }
 
-    private fun descartar(
-
-    ) {
+    private fun descartar() {
         binding.apply {
             if (param1 != null) {
                 firstName.setText(param1?.first_name)
@@ -221,7 +214,6 @@ class JobFormFragment : Fragment() {
                 phoneNumber.text.clear()
                 position.text.clear()
                 date.text.clear()
-
             }
         }
     }

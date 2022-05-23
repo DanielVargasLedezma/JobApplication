@@ -44,15 +44,13 @@ class JobApplicationAdapter(
      * a suceder cuando se clickee la vista (esto segundo solo en este segundo caso).
      */
     override fun onBindViewHolder(holder: JobApplicationViewHolder, position: Int) {
-        if(position <= itemsList.size && itemsList.isNotEmpty()) {
-            holder.render(itemsList[position], onClickListener)
-        }
+        holder.render(itemsList[position], onClickListener)
     }
 
     /*
      * Método que implementa la interfaz de Adapter, retorna la cantidad de elementos en el recycler view.
      */
-    override fun getItemCount() = jobApplicationList.size
+    override fun getItemCount() = itemsList.size
 
     /*
      * El método que filtra; es un poco self-explanatory, pero es una alta fumada ngl. Retorna un objeto filter que está
